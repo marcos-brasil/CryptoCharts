@@ -1,0 +1,33 @@
+{
+  "name": "cryptocharts",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "bash scripts/dev.bash",
+    "decrypt-secret": "bash scripts/decrypt.bash secrets.gpg secrets.tar.gz; tar xvzf secrets.tar.gz -C server/",
+    "encrypt-secret": "cd server && tar cvzf ../secret.tar.gz secrets && cd .. && bash scripts/encrypt.bash secret.tar.gz secrets.gpg; rm secret.tar.gz",
+    "build-release": "NODE_ENV=production bash scripts/release.bash",
+    "prod-server": "NODE_ENV=production node release/index.js",
+    "prod-update": "NODE_ENV=production node release/db/update.js",
+    "prod-insert": "NODE_ENV=production node release/db/insert.js",
+    "prod": "NODE_ENV=production pm2 start pm2-prod.config.cjs",
+    "scp-release": "scp -i server/secrets/debian-s-1vcpu-1gb-amd-nyc3-01.ssh release.tar.gz.gpg root@159.65.252.95:/root/release.tar.gz.gpg"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.15.4",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "chokidar-cli": "^3.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react-native": "^3.11.0",
+    "npm-check-updates": "^12.0.2",
+    "pm2": "^5.1.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "yup": "^0.32.11"
+  }
+}

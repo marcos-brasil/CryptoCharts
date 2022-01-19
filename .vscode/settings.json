@@ -1,0 +1,20 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "dev",
+      "database": "${workspaceFolder:CryptoCharts}/server/accounts-dev.sqlite"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}

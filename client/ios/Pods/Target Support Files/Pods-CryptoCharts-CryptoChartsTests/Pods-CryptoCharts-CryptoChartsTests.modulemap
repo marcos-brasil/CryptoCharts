@@ -1,0 +1,6 @@
+module Pods_CryptoCharts_CryptoChartsTests {
+  umbrella header "Pods-CryptoCharts-CryptoChartsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

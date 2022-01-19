@@ -1,0 +1,7 @@
+{
+  "ignore_dirs": [
+    "web",
+    "node_modules/.vite",
+    "node_modules/.cache"
+  ]
+}
